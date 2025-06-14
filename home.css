@@ -4,6 +4,7 @@
     align-items: center;
     padding: 0% 10%;
     border-bottom: solid #5C4033 10px;
+    height: calc(100vh - 90px);
 }
 
 #homepage-text {
@@ -52,13 +53,44 @@
     cursor: pointer;
 }
 
+#about-us-container {
+    position: relative;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+#about-us-container img {
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+#about-us-container-text {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+#about-us-container-text h3 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+}
+
+#about-us-container-text p {
+    font-size: clamp(0.2rem, 5vw, 1.2rem);
+}
+
 @media screen and (max-width: 768px){
     #homepage {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         flex-direction: column;
         padding: 8% 2%;
+        height: auto;
     }
 
     #homepage-text h3{
@@ -66,9 +98,9 @@
     }
 
     #homepage-image-container {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
     }
 
 }
