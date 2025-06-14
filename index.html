@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toffee Table</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/78e5e6e10e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header id="header">
+        <nav id="navbar">
+            <div id="nav-mob-icon">
+                <i class="fa-solid fa-bars" style="color: #5c4033; font-size: 20px;"  onclick="toggleMenu()"></i>
+            </div>
+            <div id="logo">
+                <a href=""><img src="Logo Transparent.png" alt=""></a>
+            </div>
+
+            <div id="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="">Menu</a></li>
+                    <li><a href="">Gallery</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+
+            <div id="nav-icons">
+                    <ul>
+                        <li><a href=""><i class="fa-solid fa-cart-shopping" style="color: #5c4033;"></i></a></li>
+                        <!--<li><a href=""><i class="fa-solid fa-user" style="color: #5c4033;"></i></a></li>-->
+                    </ul>
+            </div>
+            
+
+        </nav>
+    </header>
+
+    <section id="homepage">
+        <div id="homepage-text">
+            <h3>TOFFEE TABLE</h3>
+            <p>Sweet Moments Start Here</p>
+            <button type="button" id="order-now-desktop" class="order-now-button">Order Now</button>
+        </div>
+        <div id="homepage-image-container">
+            <img src="HomePage.png" alt="">
+        </div>
+    </section>
+
+</body>
+
+<script>
+    let menu = document.getElementById("nav-links");
+    menu.style.maxHeight = "0px";
+    function toggleMenu() {
+        if (menu.style.maxHeight == "0px"){
+            menu.style.maxHeight = "280px"
+        }
+        else {
+            menu.style.maxHeight = "0px";
+        }
+    }
+    
+</script>
+</html>
