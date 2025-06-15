@@ -79,8 +79,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: clamp(1.25rem, 0.4627rem + 3.0426vw, 3.125rem);
-    padding-left: clamp(1.25rem, -4.7858rem + 23.3266vw, 15.625rem);
-    padding-right: clamp(1.25rem, -4.7858rem + 23.3266vw, 15.625rem);
+    padding-left: clamp(1.25rem, 0.0038rem + 5.1125vw, 4.375rem);
+    padding-right: clamp(1.25rem, 0.0038rem + 5.1125vw, 4.375rem);
 }
 
 #best-sellers-element {
@@ -102,7 +102,7 @@
 #best-sellers-element h4 {
     color: #5C4033;
     text-align: center;
-    font-size: clamp(0.9375rem, 0.5439rem + 1.5213vw, 1.875rem);
+    font-size: clamp(0.9375rem, 0.8129rem + 0.5112vw, 1.25rem);
     margin: 0;
     padding-top: 15px;
 }
