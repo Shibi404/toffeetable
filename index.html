@@ -13,7 +13,8 @@
     <header id="header">
         <nav id="navbar">
             <div id="nav-mob-icon">
-                <i class="fa-solid fa-bars" style="color: #5c4033; font-size: 20px;"  onclick="toggleMenu()"></i>
+                <i class="fa-solid fa-bars" id="nav-mob-icon-bar" style="color: #5c4033; font-size: 20px;"  onclick="toggleMenu()"></i>
+                <i class="fa-solid fa-xmark" id="nav-mob-icon-cross" style="color: #5c4033; font-size: 23px;" onclick="toggleMenu()"></i>
             </div>
             <div id="logo">
                 <a href=""><img src="images/Logo Transparent.png" alt=""></a>
@@ -53,14 +54,25 @@
 </body>
 
 <script>
+    
     let menu = document.getElementById("nav-links");
+
+    let dispCross = document.getElementById("nav-mob-icon-cross");
+    let dispBar = document.getElementById("nav-mob-icon-bar");
+
     menu.style.maxHeight = "0px";
+    dispCross.style.display = "none";
+
     function toggleMenu() {
         if (menu.style.maxHeight == "0px"){
             menu.style.maxHeight = "280px"
+            dispCross.style.display = "block";
+            dispBar.style.display = "none";
         }
         else {
             menu.style.maxHeight = "0px";
+            dispCross.style.display = "none";
+            dispBar.style.display = "block";
         }
     }
     
