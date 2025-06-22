@@ -98,5 +98,15 @@
         }
     }
     
+    document.addEventListener("click", function (event) {
+        const clickedInsideMenu = menu.contains(event.target);
+        const clickedToggleIcons = dispCross.contains(event.target) || dispBar.contains(event.target);
+
+        if (!clickedInsideMenu && !clickedToggleIcons && menu.style.maxHeight !== "0px") {
+            menu.style.maxHeight = "0px";
+            dispCross.style.display = "none";
+            dispBar.style.display = "block";
+        }
+    });
 </script>
 </html>
