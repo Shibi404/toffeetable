@@ -119,6 +119,47 @@
     margin: 0;
 }
 
+#our-speciality {
+    background-color: #FDEAE7;
+    padding-top: 30px;
+}
+
+#our-speciality h3{
+    text-align: center;
+    color: #5C4033;
+    font-size: clamp(1.875rem, 0.8102rem + 4.1152vw, 3.125rem);
+    margin: 0;
+}
+ 
+#our-speciality-container {
+    padding: 30px clamp(1.25rem, -3.2362rem + 18.4049vw, 12.5rem);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.our-speciality-icon {
+    color: #5C4033;
+    font-size: clamp(3.75rem, 3.2515rem + 2.045vw, 5rem);
+}
+
+.our-speciality-element {
+    text-align: center;
+}
+
+.our-speciality-element h4{
+    padding: 10px 0px;
+    margin: 0;
+    color: #5C4033;
+    font-size: clamp(0.875rem, 0.7753rem + 0.409vw, 1.125rem);
+}
+
+.our-speciality-element p{
+    margin: 0;
+    font-size: clamp(0.75rem, 0.6752rem + 0.3067vw, 0.9375rem);
+    color: #5C4033;
+}
+
 @media screen and (max-width: 768px){
     #homepage {
         display: flex;
@@ -140,6 +181,10 @@
     }
 
     .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #our-speciality-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
