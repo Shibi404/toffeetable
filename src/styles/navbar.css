@@ -1,9 +1,3 @@
-body {
-    margin: 0;
-    background-color: #FFF7EC;
-    font-family: 'Poppins', sans-serif;
-}
-
 #navbar {
     background-color: #E7C9AC;
     height: 90px;
@@ -28,7 +22,7 @@ body {
     align-items: center;
 }
 
-#logo a img{
+#logo img{
     height: 50px;
     width: auto;
 }
