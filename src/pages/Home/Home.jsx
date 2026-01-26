@@ -9,21 +9,25 @@ function Home() {
     <>
       {/* Hero Section */}
       <section id="homepage">
-        <div id="homepage-text">
-          <h3>TOFFEE TABLE</h3>
-          <p>Sweet Moments Start Here</p>
-          <button className="order-now-button">Order Now</button>
-        </div>
+        <section className="site-container">
+            <div id="homepage-text">
+                <h3>TOFFEE TABLE</h3>
+                <p>Sweet Moments Start Here</p>
+                <button className="order-now-button">Order Now</button>
+            </div>
 
-        <div id="homepage-image-container">
-          <img src={homeImage} alt="Toffee Table" />
-        </div>
+            <div id="homepage-image-container">
+                <img src={homeImage} alt="Toffee Table" />
+            </div>
+        </section>
       </section>
 
-      {/* Page Sections */}
-      <BestSellers />
-      <OurProducts />
-      <OurSpeciality />
+    {/* Page Sections */}
+    <BestSellers />
+    <OurProducts />
+    <OurSpeciality />
+
+
     </>
   );
 }

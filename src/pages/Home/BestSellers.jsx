@@ -13,15 +13,17 @@ const products = [
 function BestSellers() {
   return (
     <section id="best-sellers">
-      <h3>BEST SELLERS</h3>
-      <div className="product-container">
-        {products.map((item, index) => (
-          <div className="product-element" key={index}>
-            <img src={item.img} alt={item.name} />
-            <h4>{item.name}</h4>
-          </div>
-        ))}
-      </div>
+      <section className="site-container">
+        <h3>BEST SELLERS</h3>
+        <div className="product-container">
+          {products.map((item, index) => (
+            <div className="product-element" key={index}>
+              <img src={item.img} alt={item.name} />
+              <h4>{item.name}</h4>
+            </div>
+          ))}
+        </div>
+      </section>
     </section>
   );
 }

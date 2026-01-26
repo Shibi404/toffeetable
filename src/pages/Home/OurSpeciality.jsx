@@ -24,6 +24,7 @@ const speciality = [
 function OurSpeciality() {
   return (
     <section id="our-speciality">
+      <section className="site-container">
       <h3>OUR SPECIALITY</h3>
       <div id="our-speciality-container">
         {speciality.map((item, index) => (
@@ -34,6 +35,7 @@ function OurSpeciality() {
           </div>
         ))}
       </div>
+      </section>
     </section>
   );
 }

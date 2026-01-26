@@ -13,6 +13,7 @@ const products = [
 function OurProducts() {
   return (
     <section id="our-products">
+      <section className="site-container">
       <h3>OUR PRODUCTS</h3>
       <div className="product-container">
         {products.map((item, index) => (
@@ -22,6 +23,7 @@ function OurProducts() {
           </div>
         ))}
       </div>
+      </section>
     </section>
   );
 }

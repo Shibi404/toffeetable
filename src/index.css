@@ -3,3 +3,9 @@ body {
     background-color: #FFF7EC;
     font-family: 'Poppins', sans-serif;
 }
+
+.site-container {
+  max-width: 1025px;
+  margin: 0 auto;      
+  padding: 20px 20px;      
+}

@@ -1,9 +1,7 @@
-#homepage {
+#homepage .site-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0% 10%;
-    height: calc(100vh - 90px);
 }
 
 #homepage-text {
@@ -27,7 +25,7 @@
 }
 
 #homepage-text h3{
-    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-size: 70px;
     font-family: 'Pacifico', cursive;
     color: #5C4033;
     margin: 0;
@@ -52,8 +50,6 @@
 }
 
 #best-sellers {
-    margin: 0;
-    padding: 0;
     background-color: #D8B6A4;
 }
 
@@ -61,13 +57,12 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    padding-top: 30px;
     color: #5C4033;
     font-size: clamp(1.875rem, 0.8102rem + 4.1152vw, 3.125rem);
 }
 
 #best-sellers {
-    padding-bottom: 30px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,12 +70,9 @@
 }
 
 .product-container {
-    padding-top: 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: clamp(1.25rem, 0.4627rem + 3.0426vw, 3.125rem);
-    padding-left: clamp(1.25rem, 0.0038rem + 5.1125vw, 4.375rem);
-    padding-right: clamp(1.25rem, 0.0038rem + 5.1125vw, 4.375rem);
 }
 
 .product-element {
@@ -104,12 +96,6 @@
     text-align: center;
     font-size: clamp(0.9375rem, 0.8129rem + 0.5112vw, 1.25rem);
     margin: 0;
-    padding-top: 15px;
-}
-
-#our-products {
-    padding-top: 30px;
-    padding-bottom: 30px;
 }
 
 #our-products h3 {
@@ -121,7 +107,6 @@
 
 #our-speciality {
     background-color: #FDEAE7;
-    padding-top: 30px;
 }
 
 #our-speciality h3{
@@ -161,7 +146,7 @@
 }
 
 @media screen and (max-width: 768px){
-    #homepage {
+    #homepage .site-container {
         display: flex;
         justify-content: flex-start;
         align-items: center;
