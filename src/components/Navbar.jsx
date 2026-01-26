@@ -15,7 +15,6 @@ function Navbar() {
   }, []);
 
   return (
-    <header id="header">
       <nav id="navbar">
         <div id="nav-mob-icon">
           {!open ? (
@@ -59,7 +58,6 @@ function Navbar() {
           </ul>
         </div>
       </nav>
-    </header>
   );
 }
 
