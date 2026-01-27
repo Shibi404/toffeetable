@@ -1,6 +1,8 @@
-/* Floating Dock Navbar */
+/* ============================================================
+   1. NAVBAR CORE (Floating Dock)
+   ============================================================ */
 #navbar {
-  position: fixed;     
+  position: fixed;
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
@@ -10,120 +12,184 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 40px;
+  padding: 0 40px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-  max-width: 1025px;
   width: 90%;
-}
-
-/* Mobile menu icon */
-#nav-mob-icon {
-  display: none;
-  cursor: pointer;
-  font-size: 22px;
-  color: #5c4033;
+  max-width: 1025px;
+  box-sizing: border-box;
 }
 
 /* Logo */
 #logo img {
   height: 40px;
   width: auto;
+  display: block;
   transition: height 0.3s ease;
 }
 
-/* Links - Desktop */
-#nav-links {
+/* ============================================================
+   2. NAV LINKS & SUBMENU
+   ============================================================ */
+.nav-main-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
+  gap: 40px;
   align-items: center;
 }
 
-#nav-links ul {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-}
-
-#nav-links a {
+#nav-links a, .menu-title {
   text-decoration: none;
   color: #5c4033;
   font-weight: 700;
-  position: relative;
-  transition: color 0.2s ease;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-#nav-links a::after {
-  content: '';
+/* Menu item wrapper */
+.menu-item {
+  position: relative; 
+}
+
+/* Dropdown (hidden by default) */
+.dropdown {
+  display: none !important;
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #5c4033;
-  transition: width 0.3s ease;
+  top: 100%; 
+  left: 0;   
+  background-color: #E7C9AC;
+  min-width: 180px;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  flex-direction: column;
+  z-index: 1000;
 }
 
-#nav-links a:hover::after {
+.dropdown li {
   width: 100%;
 }
 
-/* Cart Icon */
-#nav-icons ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+.dropdown li a {
+  display: block;
+  font-weight: 600;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background 0.2s;
 }
 
+/* Right side cart icon */
 #nav-icons i {
   color: #5c4033;
   font-size: 20px;
 }
 
-/* ------------------ MOBILE ------------------ */
-@media screen and (max-width: 768px) {
+/* ============================================================
+   3. DESKTOP VIEW (Hover Dropdown)
+   ============================================================ */
+@media (min-width: 769px) {
+  #nav-mob-icon {
+    display: none;
+  }
+
+  /* Show dropdown on hover */
+  .menu-item:hover > .dropdown {
+    display: flex !important;
+  }
+
+  /* Dropdown arrow above menu */
+  .dropdown::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #E7C9AC;
+  }
+}
+
+/* ============================================================
+   4. MOBILE VIEW (Toggle Dropdown)
+   ============================================================ */
+@media (max-width: 768px) {
 
   #navbar {
-    width: 80%;
     padding: 0 20px;
   }
 
-  #nav-mob-icon {
-    display: flex;
+  #nav-icons {
+    display: none;
   }
 
+  #nav-mob-icon {
+    display: block;
+    font-size: 22px;
+    color: #5c4033;
+    cursor: pointer;
+  }
+
+  /* MOBILE NAV DRAWER */
   #nav-links {
     position: absolute;
+    top: 75px;
     left: 0;
     right: 0;
-    top: 60px; 
     background-color: #E7C9AC;
-    overflow: hidden;
+    border-radius: 15px;
     max-height: 0;
-    display: block;
-    border-radius: 0 0 15px 15px;
-    transition: max-height 0.3s ease;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
   }
 
   #nav-links.open {
-    max-height: 300px;
+    max-height: 800px;
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   }
 
   #nav-links ul {
     flex-direction: column;
-    padding: 20px 0;
-    gap: 20px;
+    padding: 20px;
+    gap: 15px;
+    align-items: flex-start;
   }
 
-  #nav-links a {
-    font-size: 18px;
+  /* MOBILE DROPDOWN (Accordion Style) */
+  .dropdown {
+    position: static !important;
+    transform: none;
+    left: 0;
+    box-shadow: none;
+    background-color: rgba(92, 64, 51, 0.05);
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 10px 0;
   }
 
-  #nav-icons {
-    display: none; 
+  /* Show only when active */
+  .menu-item.active .dropdown {
+    display: flex !important;
+  }
+
+  /* Rotate chevron when active */
+  .menu-title i {
+    transition: transform 0.3s ease;
+  }
+
+  .menu-item.active .menu-title i {
+    transform: rotate(180deg);
   }
 }
