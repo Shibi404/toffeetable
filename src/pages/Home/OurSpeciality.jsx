@@ -25,7 +25,7 @@ function OurSpeciality() {
   return (
     <section id="our-speciality">
       <section className="site-container">
-      <h3>OUR SPECIALITY</h3>
+      <h3 className="heading">OUR SPECIALITY</h3>
       <div id="our-speciality-container">
         {speciality.map((item, index) => (
           <div className="our-speciality-element" key={index}>

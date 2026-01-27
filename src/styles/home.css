@@ -53,16 +53,19 @@
     background-color: #D8B6A4;
 }
 
-#best-sellers h3 {
+.heading {
     margin: 0;
     padding: 0;
     text-align: center;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+#best-sellers h3 {
     color: #5C4033;
-    font-size: clamp(1.875rem, 0.8102rem + 4.1152vw, 3.125rem);
 }
 
 #best-sellers {
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,10 +76,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: clamp(1.25rem, 0.4627rem + 3.0426vw, 3.125rem);
-}
-
-.product-element {
-    border-radius: 20px;
+    padding: 20px;
+    background-color: #FFF7EC;
 }
 
 .product-element:hover {
@@ -86,7 +87,6 @@
 
 .product-element img {
     width: 100%;
-    border-radius: 20px;
     height: auto;
     display: block;
 }
@@ -94,15 +94,13 @@
 .product-element h4 {
     color: #5C4033;
     text-align: center;
-    font-size: clamp(0.9375rem, 0.8129rem + 0.5112vw, 1.25rem);
+    font-size: 15px;
     margin: 0;
+    padding-top: 10px;
 }
 
 #our-products h3 {
-    text-align: center;
     color: #5C4033;
-    font-size: clamp(1.875rem, 0.8102rem + 4.1152vw, 3.125rem);
-    margin: 0;
 }
 
 #our-speciality {
@@ -110,22 +108,19 @@
 }
 
 #our-speciality h3{
-    text-align: center;
     color: #5C4033;
-    font-size: clamp(1.875rem, 0.8102rem + 4.1152vw, 3.125rem);
-    margin: 0;
 }
  
 #our-speciality-container {
-    padding: 30px clamp(1.25rem, -3.2362rem + 18.4049vw, 12.5rem);
+    padding: 10px 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 50px;
 }
 
 .our-speciality-icon {
     color: #5C4033;
-    font-size: clamp(3.75rem, 3.2515rem + 2.045vw, 5rem);
+    font-size: 70px;
 }
 
 .our-speciality-element {
@@ -136,12 +131,12 @@
     padding: 10px 0px;
     margin: 0;
     color: #5C4033;
-    font-size: clamp(0.875rem, 0.7753rem + 0.409vw, 1.125rem);
+    font-size: 15px;
 }
 
 .our-speciality-element p{
     margin: 0;
-    font-size: clamp(0.75rem, 0.6752rem + 0.3067vw, 0.9375rem);
+    font-size: 14px;
     color: #5C4033;
 }
 

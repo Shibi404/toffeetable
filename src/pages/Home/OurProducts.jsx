@@ -14,7 +14,7 @@ function OurProducts() {
   return (
     <section id="our-products">
       <section className="site-container">
-      <h3>OUR PRODUCTS</h3>
+      <h3 className="heading">OUR PRODUCTS</h3>
       <div className="product-container">
         {products.map((item, index) => (
           <div className="product-element" key={index}>

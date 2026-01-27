@@ -8,5 +8,11 @@ body {
 .site-container {
   max-width: 1025px;
   margin: 0 auto;      
-  padding: 20px 20px;      
+  padding: 30px 30px;      
+}
+
+@media screen and (max-width: 768px){
+  .site-container {
+    padding: 30px 10px;
+  }
 }

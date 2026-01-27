@@ -12,7 +12,9 @@ function Home() {
         <section className="site-container">
             <div id="homepage-text">
                 <h3>TOFFEE TABLE</h3>
-                <p>Sweet Moments Start Here</p>
+                <p>From soft cakes and fluffy cupcakes to rich brownies and delicate pastries,
+everything is freshly baked with love and the finest ingredients. <br /> <b>
+There’s always room for something sweet. 🍰</b></p>
                 <button className="order-now-button">Order Now</button>
             </div>
 

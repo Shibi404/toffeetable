@@ -14,7 +14,7 @@ function BestSellers() {
   return (
     <section id="best-sellers">
       <section className="site-container">
-        <h3>BEST SELLERS</h3>
+        <h3 className="heading">BEST SELLERS</h3>
         <div className="product-container">
           {products.map((item, index) => (
             <div className="product-element" key={index}>
