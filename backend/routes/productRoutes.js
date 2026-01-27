@@ -1,0 +1,23 @@
+import express from "express";
+import Product from "../models/Product.js";
+
+const router = express.Router();
+
+/**
+ * GET all products
+ * GET by category: /api/products?category=cakes
+ */
+router.get("/", async (req, res) => {
+  try {
+    const { category } = req.query;
+
+    const filter = category ? { category } : {};
+    const products = await Product.find(filter);
+
+    res.json(products);
+  } catch (error) {
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+
+export default router;
