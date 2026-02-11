@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/Logo Transparent.png";
 
 function Navbar() {
@@ -44,14 +45,14 @@ function Navbar() {
             }}
           >
             <span className="menu-title">
-              Menu <i className="fa-solid fa-chevron-down"></i>
+              <Link to="/menu">Menu</Link> <i className="fa-solid fa-chevron-down"></i>
             </span>
 
             <ul className="dropdown">
-              <li><a href="/menu/cakes">Cakes</a></li>
-              <li><a href="/menu/brownies">Brownies</a></li>
-              <li><a href="/menu/cupcakes">Cupcakes</a></li>
-              <li><a href="/menu/pastries">Pastries</a></li>
+              <li><Link to="/menu/cakes">Cakes</Link></li>
+              <li><Link to="/menu/brownies">Brownies</Link></li>
+              <li><Link to="/menu/cupcakes">Cupcakes</Link></li>
+              <li><Link to="/menu/pastries">Pastries</Link></li>
             </ul>
           </li>
 

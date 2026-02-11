@@ -11,13 +11,18 @@ router.get("/", async (req, res) => {
   try {
     const { category } = req.query;
 
-    const filter = category ? { category } : {};
-    const products = await Product.find(filter);
+    let filter = {};
+
+    if (category && category !== "all") {
+      filter.category = category;
+    }
+
+    const products = await Product.find(filter).sort({ createdAt: -1 });
 
     res.json(products);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: "Server Error" });
   }
 });
 
-export default router;
