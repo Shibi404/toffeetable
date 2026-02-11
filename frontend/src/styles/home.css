@@ -1,3 +1,7 @@
+#homepage {
+    padding-top: 80px;
+}
+
 #homepage .site-container {
     display: flex;
     justify-content: space-between;
