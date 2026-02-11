@@ -84,14 +84,20 @@
     background-color: #FFF7EC;
 }
 
+.product-element {
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .product-element:hover {
-    transform: scale(1.05);
-    transition: all 0.5s ease;
+    transform: translateY(-4px); 
 }
 
 .product-element img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     display: block;
 }
 
