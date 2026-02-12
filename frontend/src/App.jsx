@@ -6,6 +6,7 @@ import Menu from "./pages/Menu/Menu";
 import "./index.css";
 import "./styles/home.css";
 import "./styles/navbar.css";
+import "./styles/loginmodal.css";
 
 function App() {
   return (
