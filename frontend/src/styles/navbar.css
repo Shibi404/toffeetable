@@ -87,10 +87,132 @@
   transition: background 0.2s;
 }
 
-/* Right side cart icon */
-#nav-icons i {
+/* Right side icons container */
+#nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+#nav-icons > i,
+#nav-icons .user-icon {
   color: #5c4033;
   font-size: 20px;
+}
+
+/* Cart icon hover */
+.cart-icon {
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.cart-icon:hover {
+  color: #3e2a1e !important;
+  transform: scale(1.15);
+}
+
+/* ============================================================
+   USER DROPDOWN (Profile / Logout)
+   ============================================================ */
+.user-wrapper {
+  position: relative;
+}
+
+.user-icon {
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.user-icon:hover {
+  color: #3e2a1e !important;
+  transform: scale(1.15);
+}
+
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: -10px;
+  background: #E7C9AC;
+  min-width: 180px;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px -6px rgba(92, 64, 51, 0.35),
+              0 4px 10px -2px rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1001;
+  animation: dropdownFadeIn 0.25s ease forwards;
+}
+
+/* Arrow pointing up */
+.dropdown-arrow {
+  position: absolute;
+  top: -8px;
+  right: 16px;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #E7C9AC;
+}
+
+/* Divider */
+.dropdown-divider {
+  border: none;
+  border-top: 1px solid rgba(92, 64, 51, 0.15);
+  margin: 2px 8px;
+}
+
+/* Buttons */
+.user-dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #5c4033;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.user-dropdown button i {
+  font-size: 14px;
+  width: 18px;
+  text-align: center;
+}
+
+.user-dropdown button:hover {
+  background: rgba(92, 64, 51, 0.12);
+}
+
+/* Logout specific */
+.user-dropdown .logout-btn {
+  color: #b03a2e;
+}
+
+.user-dropdown .logout-btn:hover {
+  background: rgba(176, 58, 46, 0.1);
+  color: #922b21;
+}
+
+/* Slide-in animation */
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ============================================================

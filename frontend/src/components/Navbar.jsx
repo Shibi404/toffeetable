@@ -79,8 +79,8 @@ function Navbar() {
         </div>
 
         {/* 4. Cart + User */}
-        <div id="nav-icons" style={{ display: "flex", gap: "15px", position: "relative" }}>
-                    {/* ✅ SAME USER ICON ALWAYS */}
+        <div id="nav-icons">
+          {/* ✅ SAME USER ICON ALWAYS */}
           <div className="user-wrapper">
             <i
               className="fa-solid fa-user user-icon"
@@ -96,22 +96,27 @@ function Navbar() {
             {/* ✅ DROPDOWN AFTER LOGIN */}
             {token && showDropdown && (
               <div className="user-dropdown">
+                <div className="dropdown-arrow"></div>
                 <button
                   onClick={() => {
                     navigate("/profile");
                     setShowDropdown(false);
                   }}
                 >
-                  Profile
+                  <i className="fa-solid fa-user"></i>
+                  My Profile
                 </button>
 
+                <hr className="dropdown-divider" />
+
                 <button className="logout-btn" onClick={handleLogout}>
+                  <i className="fa-solid fa-right-from-bracket"></i>
                   Logout
                 </button>
               </div>
             )}
           </div>
-          <i className="fa-solid fa-cart-shopping"></i>
+          <i className="fa-solid fa-cart-shopping cart-icon"></i>
         </div>
       </nav>
 
