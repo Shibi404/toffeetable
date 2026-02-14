@@ -116,7 +116,10 @@ function Navbar() {
               </div>
             )}
           </div>
-          <i className="fa-solid fa-cart-shopping cart-icon"></i>
+          <i
+            className="fa-solid fa-cart-shopping cart-icon"
+            onClick={() => navigate("/cart")}
+          ></i>
         </div>
       </nav>
 
