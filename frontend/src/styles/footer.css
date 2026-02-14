@@ -1,0 +1,141 @@
+/* ============================================================
+   FOOTER STYLES
+   ============================================================ */
+.footer {
+    background-color: #E7C9AC;
+    padding-top: 60px;
+    color: #5C4033;
+    font-family: 'Poppins', sans-serif;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 40px;
+}
+
+.footer-section h4 {
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 25px;
+    color: #5C4033;
+}
+
+/* About Section */
+.footer-logo {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5C4033;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 38px;
+    height: 38px;
+    background: #5C4033;
+    color: #E7C9AC;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    background: #8B6D5C;
+    box-shadow: 0 5px 15px rgba(92, 64, 51, 0.2);
+}
+
+/* Links Section */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul a {
+    text-decoration: none;
+    color: #5C4033;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer-section ul a:hover {
+    color: #8B6D5C;
+    padding-left: 5px;
+}
+
+/* Contact Section */
+.contact p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact i {
+    color: #8B6D5C;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background-color: rgba(92, 64, 51, 0.05);
+    padding: 5px 0;
+    text-align: center;
+    border-top: 1px solid rgba(92, 64, 51, 0.1);
+}
+
+.footer-bottom .site-container {
+    padding: 0;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    margin: 0;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-section h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .contact p {
+        justify-content: center;
+    }
+}

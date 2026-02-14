@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom"; 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home/Home";
 import Menu from "./pages/Menu/Menu";
 import Cart from "./pages/Cart/Cart";
@@ -20,6 +21,7 @@ function App() {
         <Route path="/menu/:category" element={<Menu />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
+      <Footer />
     </>
   );
 }
