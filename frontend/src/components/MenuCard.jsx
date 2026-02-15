@@ -37,18 +37,35 @@ function MenuCard({ product }) {
     }
   };
 
+  const hasDiscount = product.discount > 0;
+  const discountedPrice = hasDiscount
+    ? Math.round(product.price * (1 - product.discount / 100))
+    : product.price;
+
   return (
     <div className={`product-element menu-card ${!product.isAvailable ? "sold-out" : ""}`}>
       <div className="image-wrapper">
         <img src={product.image} alt={product.name} />
         {!product.isAvailable && <span className="sold-out-overlay">Sold Out</span>}
+        {hasDiscount && product.isAvailable && (
+          <span className="discount-badge">-{product.discount}%</span>
+        )}
       </div>
       
       <div className="menu-card-info">
         <h4>{product.name}</h4>
         <p className="description">{product.description}</p>
         <div className="menu-card-footer">
-          <span className="price">₹{product.price}</span>
+          <div className="price-container">
+            {hasDiscount ? (
+              <>
+                <span className="discounted-price">₹{discountedPrice}</span>
+                <span className="original-price">₹{product.price}</span>
+              </>
+            ) : (
+              <span className="price">₹{product.price}</span>
+            )}
+          </div>
           <button
             className={`order-now-button ${added ? "added" : ""}`}
             disabled={!product.isAvailable || adding}

@@ -131,6 +131,40 @@
     border-radius: 5px;
 }
 
+/* Discount Styling */
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #b03a2e;
+    color: white;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(176, 58, 46, 0.3);
+    z-index: 2;
+}
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.discounted-price {
+    font-weight: bold;
+    color: #b03a2e;
+    font-size: 20px;
+}
+
+.original-price {
+    font-size: 13px;
+    color: #8B6D5C;
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
 @media screen and (max-width: 600px) {
     .menu-controls {
         flex-direction: column;
