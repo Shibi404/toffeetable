@@ -42,9 +42,10 @@ function Navbar() {
         </div>
 
         {/* 2. Logo */}
+        <Link to="/">
         <div id="logo">
           <img src={logo} alt="Toffee Table Logo" />
-        </div>
+        </div></Link>
 
         {/* 3. Links */}
         <div id="nav-links" className={isOpen ? "open" : ""}>
