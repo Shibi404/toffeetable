@@ -119,7 +119,7 @@ function Navbar() {
           </div>
           <i
             className="fa-solid fa-cart-shopping cart-icon"
-            onClick={() => navigate("/cart")}
+            onClick={() => window.dispatchEvent(new Event("open-cart"))}
           ></i>
         </div>
       </nav>

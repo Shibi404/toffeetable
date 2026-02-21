@@ -3,8 +3,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home/Home";
 import Menu from "./pages/Menu/Menu";
-import Cart from "./pages/Cart/Cart";
 import Profile from "./pages/Profile/Profile";
+import CartDrawer from "./components/CartDrawer";
 
 import "./index.css";
 import "./styles/home.css";
@@ -17,11 +17,11 @@ function App() {
   return (
     <>
       <Navbar />
+      <CartDrawer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/menu/:category" element={<Menu />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />

@@ -26,8 +26,9 @@ function MenuCard({ product }) {
 
       if (res.ok) {
         setAdded(true);
-        // Notify navbar to refresh cart count
+        // Notify navbar to refresh cart count and open drawer
         window.dispatchEvent(new Event("cart-updated"));
+        window.dispatchEvent(new Event("open-cart"));
         setTimeout(() => setAdded(false), 1500);
       }
     } catch (err) {
