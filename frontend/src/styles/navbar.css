@@ -304,9 +304,9 @@
 @media (max-width: 768px) {
   #navbar {
     padding: 0 15px;
-    height: 60px; /* Increased height */
-    width: 95%;   /* Bolder presence */
-    top: 10px;
+    height: 68px; /* Increased for better presence */
+    width: 95%;
+    top: 12px;
     border-radius: 15px;
   }
 
@@ -326,7 +326,7 @@
   }
 
   #logo img {
-    height: 34px; /* Scaled logo */
+    height: 40px; /* Increased for better presence */
   }
 
   #nav-icons {
