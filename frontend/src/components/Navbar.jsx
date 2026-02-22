@@ -61,10 +61,19 @@ function Navbar() {
           <img src={logo} alt="Toffee Table Logo" />
         </div></Link>
 
-        {/* 3. Links */}
+        {/* 3. Links (Drawer) */}
         <div id="nav-links" className={isOpen ? "open" : ""}>
           <ul className="nav-main-links">
-            <li><Link to="/">Home</Link></li>
+            {/* Mobile Profile Section moved to bottom as per user request */}
+
+            <hr className="mobile-only drawer-divider" />
+
+            <li>
+              <Link to="/" className="mobile-nav-link" onClick={() => setIsOpen(false)}>
+                <i className="fa-solid fa-house"></i>
+                Home
+              </Link>
+            </li>
 
             <li
               className={`menu-item ${isSubOpen ? "active" : ""}`}
@@ -75,28 +84,83 @@ function Navbar() {
                 }
               }}
             >
-              <span className="menu-title">
-                <Link to="/menu">Menu</Link>
+              <span className="menu-title no-underline">
+                <i className="fa-solid fa-utensils"></i>
+                <Link to="/menu" onClick={(e) => { if(window.innerWidth > 768) setIsOpen(false); else e.preventDefault(); }}>Menu</Link>
                 <i className="fa-solid fa-chevron-down"></i>
               </span>
 
               <ul className="dropdown">
-                <li><Link to="/menu/cakes">Cakes</Link></li>
-                <li><Link to="/menu/brownies">Brownies</Link></li>
-                <li><Link to="/menu/cupcakes">Cupcakes</Link></li>
-                <li><Link to="/menu/pastries">Pastries</Link></li>
+                <div className="dropdown-content">
+                  <li>
+                    <Link to="/menu/cakes" onClick={() => setIsOpen(false)}>
+                      <i className="fa-solid fa-cake-candles"></i>
+                      Cakes
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/menu/brownies" onClick={() => setIsOpen(false)}>
+                      <i className="fa-solid fa-cookie"></i>
+                      Brownies
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/menu/cupcakes" onClick={() => setIsOpen(false)}>
+                      <i className="fa-solid fa-ice-cream"></i>
+                      Cupcakes
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/menu/pastries" onClick={() => setIsOpen(false)}>
+                      <i className="fa-solid fa-bread-slice"></i>
+                      Pastries
+                    </Link>
+                  </li>
+                </div>
               </ul>
             </li>
 
-            <li><Link to="/">Gallery</Link></li>
-            <li><Link to="/">Contact</Link></li>
+            <li>
+              <Link to="/" className="mobile-nav-link" onClick={() => setIsOpen(false)}>
+                <i className="fa-solid fa-image"></i>
+                Gallery
+              </Link>
+            </li>
+            <li>
+              <Link to="/" className="mobile-nav-link contact-finish" onClick={() => setIsOpen(false)}>
+                <i className="fa-solid fa-envelope"></i>
+                Contact
+              </Link>
+            </li>
+
+            {/* Bottom Mobile Account Buttons */}
+            <li className="mobile-only mobile-account-section">
+              <hr className="mobile-account-divider" />
+              {!token ? (
+                <button className="mobile-account-btn login-full" onClick={() => { setShowLogin(true); setIsOpen(false); }}>
+                  <i className="fa-solid fa-user-plus"></i>
+                  Login / Sign Up
+                </button>
+              ) : (
+                <div className="mobile-account-row">
+                  <button className="mobile-account-btn profile" onClick={() => { navigate("/profile"); setIsOpen(false); }}>
+                    <i className="fa-solid fa-circle-user"></i>
+                    Profile
+                  </button>
+                  <button className="mobile-account-btn logout-small" onClick={() => { handleLogout(); setIsOpen(false); }}>
+                    <i className="fa-solid fa-power-off"></i>
+                    Logout
+                  </button>
+                </div>
+              )}
+            </li>
           </ul>
         </div>
 
-        {/* 4. Cart + User */}
+        {/* 4. Icons */}
         <div id="nav-icons">
-          {/* ✅ SAME USER ICON ALWAYS */}
-          <div className="user-wrapper">
+          {/* User Icon - Desktop Only */}
+          <div className="user-wrapper desktop-only">
             <i
               className="fa-solid fa-user user-icon"
               onClick={() => {
@@ -108,29 +172,31 @@ function Navbar() {
               }}
             ></i>
 
-            {/* ✅ DROPDOWN AFTER LOGIN */}
             {token && showDropdown && (
               <div className="user-dropdown">
-                <div className="dropdown-arrow"></div>
-                <button
-                  onClick={() => {
-                    navigate("/profile");
-                    setShowDropdown(false);
-                  }}
-                >
-                  <i className="fa-solid fa-user"></i>
-                  My Profile
-                </button>
+                <div className="user-dropdown-content">
+                  <div className="dropdown-arrow"></div>
+                  <button
+                    onClick={() => {
+                      navigate("/profile");
+                      setShowDropdown(false);
+                    }}
+                  >
+                    <i className="fa-solid fa-user"></i>
+                    My Profile
+                  </button>
 
-                <hr className="dropdown-divider" />
 
-                <button className="logout-btn" onClick={handleLogout}>
-                  <i className="fa-solid fa-right-from-bracket"></i>
-                  Logout
-                </button>
+                  <button className="logout-btn" onClick={handleLogout}>
+                    <i className="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                  </button>
+                </div>
               </div>
             )}
           </div>
+
+          {/* Cart Icon - Always visible, right side on mobile */}
           <i
             className="fa-solid fa-cart-shopping cart-icon"
             onClick={() => window.dispatchEvent(new Event("open-cart"))}
