@@ -6,6 +6,8 @@ import Menu from "./pages/Menu/Menu";
 import Profile from "./pages/Profile/Profile";
 import CartDrawer from "./components/CartDrawer";
 
+import { CartProvider } from "./context/CartContext";
+
 import "./index.css";
 import "./styles/home.css";
 import "./styles/navbar.css";
@@ -15,7 +17,7 @@ import "./styles/profile.css";
 
 function App() {
   return (
-    <>
+    <CartProvider>
       <Navbar />
       <CartDrawer />
       <Routes>
@@ -25,7 +27,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
-    </>
+    </CartProvider>
   );
 }
 

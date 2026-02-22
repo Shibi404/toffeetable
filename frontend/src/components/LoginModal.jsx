@@ -140,6 +140,7 @@ function LoginModal({ closeModal, setToken }) {
 
       localStorage.setItem("token", data.token);
       setToken(data.token);
+      window.dispatchEvent(new Event("auth-change"));
       setStep(3);
     } catch {
       setError("Verification failed. Please ensure you're connected to the internet.");

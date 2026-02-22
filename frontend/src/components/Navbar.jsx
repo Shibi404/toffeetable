@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/images/Logo Transparent.png";
 import LoginModal from "./LoginModal";
+import { useCart } from "../context/CartContext";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -12,6 +13,18 @@ function Navbar() {
   const [showLogin, setShowLogin] = useState(false);
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [showDropdown, setShowDropdown] = useState(false);
+  const { totalItems, fetchCart } = useCart();
+
+  // Sync token state on auth-change
+  useEffect(() => {
+    const syncToken = () => setToken(localStorage.getItem("token"));
+    window.addEventListener("auth-change", syncToken);
+    window.addEventListener("open-login", () => setShowLogin(true));
+    return () => {
+      window.removeEventListener("auth-change", syncToken);
+      window.removeEventListener("open-login", () => setShowLogin(true));
+    };
+  }, []);
 
   // Close menus when clicking outside
   useEffect(() => {
@@ -31,6 +44,7 @@ function Navbar() {
     localStorage.removeItem("token");
     setToken(null);
     setShowDropdown(false);
+    window.dispatchEvent(new Event("auth-change"));
   };
 
   return (

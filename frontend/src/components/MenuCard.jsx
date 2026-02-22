@@ -1,41 +1,20 @@
 import { useState } from "react";
+import { useCart } from "../context/CartContext";
 
 function MenuCard({ product }) {
   const [adding, setAdding] = useState(false);
   const [added, setAdded] = useState(false);
+  const { addToCart } = useCart();
 
   const handleAddToCart = async () => {
-    const token = localStorage.getItem("token");
-
-    if (!token) {
-      // Dispatch a custom event so Navbar can open the login modal
-      window.dispatchEvent(new Event("open-login"));
-      return;
-    }
-
     setAdding(true);
-    try {
-      const res = await fetch("http://localhost:5000/api/cart/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ productId: product._id }),
-      });
-
-      if (res.ok) {
-        setAdded(true);
-        // Notify navbar to refresh cart count and open drawer
-        window.dispatchEvent(new Event("cart-updated"));
-        window.dispatchEvent(new Event("open-cart"));
-        setTimeout(() => setAdded(false), 1500);
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setAdding(false);
+    const success = await addToCart(product._id);
+    if (success) {
+      setAdded(true);
+      window.dispatchEvent(new Event("open-cart"));
+      setTimeout(() => setAdded(false), 1500);
     }
+    setAdding(false);
   };
 
   const hasDiscount = product.discount > 0;

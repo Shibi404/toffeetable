@@ -1,84 +1,21 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 import "../styles/cart.css";
-
-const API = "http://localhost:5000/api/cart";
 
 function CartDrawer() {
   const [isOpen, setIsOpen] = useState(false);
-  const [cart, setCart] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const { cart, loading, updateQty, removeItem, subtotal } = useCart();
   const token = localStorage.getItem("token");
 
-  const headers = {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
-  };
-
-  const fetchCart = async () => {
-    if (!token) return;
-    setLoading(true);
-    try {
-      const res = await fetch(API, { headers });
-      const data = await res.json();
-      setCart(data);
-    } catch {
-      setCart({ items: [] });
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    const handleOpen = () => {
-      setIsOpen(true);
-      fetchCart();
-    };
-    const handleRefresh = () => fetchCart();
-
+    const handleOpen = () => setIsOpen(true);
     window.addEventListener("open-cart", handleOpen);
-    window.addEventListener("cart-updated", handleRefresh);
-
-    return () => {
-      window.removeEventListener("open-cart", handleOpen);
-      window.removeEventListener("cart-updated", handleRefresh);
-    };
-  }, [token]);
-
-  const updateQty = async (productId, quantity) => {
-    try {
-      const res = await fetch(`${API}/update`, {
-        method: "PUT",
-        headers,
-        body: JSON.stringify({ productId, quantity }),
-      });
-      const data = await res.json();
-      setCart(data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const removeItem = async (productId) => {
-    try {
-      const res = await fetch(`${API}/remove/${productId}`, {
-        method: "DELETE",
-        headers,
-      });
-      const data = await res.json();
-      setCart(data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+    return () => window.removeEventListener("open-cart", handleOpen);
+  }, []);
 
   const items = cart?.items || [];
   const validItems = items.filter((i) => i.productId);
-  const subtotal = validItems.reduce(
-    (sum, i) => sum + i.productId.price * i.quantity,
-    0
-  );
-  const totalQty = validItems.reduce((sum, i) => sum + i.quantity, 0);
 
   return (
     <>
