@@ -51,8 +51,11 @@ function Navbar() {
     <>
       <nav id="navbar">
         {/* 1. Hamburger */}
-        <div id="nav-mob-icon" onClick={() => setIsOpen(!isOpen)}>
-          <i className={`fa-solid ${isOpen ? "fa-xmark" : "fa-bars"}`}></i>
+        <div id="nav-mob-icon">
+          <i 
+            className={`fa-solid ${isOpen ? "fa-xmark" : "fa-bars"}`}
+            onClick={() => setIsOpen(!isOpen)}
+          ></i>
         </div>
 
         {/* 2. Logo */}

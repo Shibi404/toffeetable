@@ -317,6 +317,14 @@
     flex: 1;
   }
 
+  /* Only the icon is clickable */
+  #nav-mob-icon i {
+    cursor: pointer;
+    padding: 10px;
+    margin-left: -10px; /* Offset padding to keep alignment */
+    display: inline-block;
+  }
+
   #logo img {
     height: 34px; /* Scaled logo */
   }
