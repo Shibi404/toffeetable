@@ -1,8 +1,8 @@
 /* checkout.css */
 .checkout-container {
-  max-width: 800px;
+  max-width: 650px;
   margin: 0 auto;
-  padding: 120px 20px 60px;
+  padding: 100px 20px 40px;
   min-height: 80vh;
 }
 
@@ -12,10 +12,10 @@
 }
 
 .checkout-header h1 {
-  font-size: 2.5rem;
-  color: var(--primary-color);
+  font-size: 2rem;
+  color: #5C4033;
   margin-bottom: 30px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Pacifico', cursive;
 }
 
 .checkout-steps {
@@ -36,12 +36,12 @@
 }
 
 .step.active {
-  color: var(--primary-color);
+  color: #5C4033;
 }
 
 .step-num {
-  width: 35px;
-  height: 35px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: #f0f0f0;
   display: flex;
@@ -52,7 +52,7 @@
 }
 
 .step.active .step-num {
-  background: var(--primary-color);
+  background: #5C4033;
   color: white;
   box-shadow: 0 4px 10px rgba(74, 59, 50, 0.3);
 }
@@ -67,17 +67,17 @@
 
 .checkout-box {
   background: white;
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(74, 59, 50, 0.1);
 }
 
 .checkout-box h2 {
-  color: var(--primary-color);
-  margin-bottom: 25px;
-  font-size: 1.8rem;
-  font-family: 'Playfair Display', serif;
+  color: #5C4033;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-family: 'Pacifico', cursive;
 }
 
 .checkout-items {
@@ -95,8 +95,8 @@
 }
 
 .checkout-item img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -106,20 +106,20 @@
 }
 
 .c-item-info h4 {
-  font-size: 1.1rem;
-  color: var(--primary-color);
+  font-size: 1rem;
+  color: #5C4033;
   margin-bottom: 5px;
 }
 
 .c-item-info p {
   color: #666;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .c-item-price {
   font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--primary-color);
+  font-size: 1.05rem;
+  color: #5C4033;
 }
 
 .checkout-total {
@@ -127,14 +127,14 @@
   justify-content: space-between;
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: #5C4033;
   padding: 20px 0;
 }
 
 .checkout-next-btn {
   width: 100%;
-  padding: 15px;
-  font-size: 1.1rem;
+  padding: 12px;
+  font-size: 1rem;
   margin-top: 20px;
 }
 
@@ -148,41 +148,42 @@
 .address-card {
   border: 2px solid #eee;
   border-radius: 12px;
-  padding: 20px;
+  padding: 15px;
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
 }
 
 .address-card:hover {
-  border-color: var(--accent-light);
+  border-color: #FDEAE7;
 }
 
 .address-card.selected {
-  border-color: var(--primary-color);
-  background-color: var(--accent-light);
+  border-color: #5C4033;
+  background-color: #FDEAE7;
 }
 
 .addr-label {
   font-weight: 700;
-  color: var(--primary-color);
+  color: #5C4033;
   margin-bottom: 10px;
   display: inline-block;
   background: white;
-  padding: 2px 10px;
+  padding: 2px 8px;
   border-radius: 20px;
-  font-size: 0.8rem;
-  border: 1px solid var(--primary-color);
+  font-size: 0.75rem;
+  border: 1px solid #5C4033;
 }
 
 .address-card p {
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   color: #555;
+  font-size: 0.9rem;
 }
 
 .add-new-btn {
   width: 100%;
-  padding: 15px;
+  padding: 12px;
   border: 2px dashed #ccc;
   background: transparent;
   color: #666;
@@ -190,9 +191,9 @@
 }
 
 .add-new-btn:hover {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
-  background: var(--accent-light);
+  border-color: #5C4033;
+  color: #5C4033;
+  background: #FDEAE7;
 }
 
 /* Address Form */
@@ -204,29 +205,31 @@
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .form-group label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  color: var(--primary-color);
+  font-size: 0.9rem;
+  color: #5C4033;
 }
 
 .form-group input {
   width: 100%;
-  padding: 12px 15px;
+  padding: 10px 12px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px var(--accent-light);
+  border-color: #5C4033;
+  box-shadow: 0 0 0 3px #FDEAE7;
 }
 
 .form-row {
@@ -259,7 +262,8 @@
 
 .step-actions button {
   flex: 1;
-  padding: 15px;
+  padding: 12px;
+  font-size: 0.95rem;
 }
 
 /* Payment Step */
@@ -273,35 +277,35 @@
 .payment-card {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
-  border: 2px solid var(--primary-color);
+  gap: 15px;
+  padding: 15px;
+  border: 2px solid #5C4033;
   border-radius: 12px;
-  background: var(--accent-light);
+  background: #FDEAE7;
   cursor: pointer;
 }
 
 .payment-card i {
-  font-size: 1.8rem;
-  color: var(--primary-color);
+  font-size: 1.5rem;
+  color: #5C4033;
 }
 
 .pay-info h4 {
-  font-size: 1.1rem;
-  color: var(--primary-color);
-  margin-bottom: 4px;
+  font-size: 1rem;
+  color: #5C4033;
+  margin-bottom: 2px;
 }
 
 .pay-info p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #666;
 }
 
 .radio-circle {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  border: 2px solid var(--primary-color);
+  border: 2px solid #5C4033;
   margin-left: auto;
   position: relative;
   display: flex;
@@ -311,29 +315,30 @@
 
 .radio-circle.active::after {
   content: '';
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: var(--primary-color);
+  background: #5C4033;
 }
 
 .order-summary-box {
   background: #fdfaf7;
-  padding: 25px;
+  padding: 20px;
   border-radius: 12px;
   border: 1px solid #f0e6dd;
 }
 
 .order-summary-box h3 {
-  color: var(--primary-color);
+  color: #5C4033;
   margin-bottom: 20px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Pacifico', cursive;
 }
 
 .summary-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
   color: #555;
 }
 
@@ -343,7 +348,7 @@
   border-top: 1px dashed #ccc;
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: #5C4033;
 }
 
 /* Order Success Container */
@@ -357,18 +362,18 @@
 
 .success-card {
   background: white;
-  max-width: 500px;
+  max-width: 450px;
   width: 100%;
-  border-radius: 20px;
-  padding: 50px 40px;
+  border-radius: 16px;
+  padding: 40px 30px;
   text-align: center;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
 .success-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--accent-color, #E8A87C);
+  width: 60px;
+  height: 60px;
+  background: #8B6D5C;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -378,22 +383,22 @@
 }
 
 .success-icon i {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: white;
 }
 
 .success-card h1 {
-  font-family: 'Playfair Display', serif;
-  color: var(--primary-color);
-  font-size: 2.2rem;
+  font-family: 'Pacifico', cursive;
+  color: #5C4033;
+  font-size: 1.8rem;
   margin-bottom: 15px;
 }
 
 .success-card p {
   color: #666;
-  margin-bottom: 35px;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .success-actions {
@@ -403,9 +408,10 @@
 }
 
 .success-actions a {
-  padding: 15px;
+  padding: 12px;
   text-decoration: none;
   font-weight: 600;
+  font-size: 0.95rem;
   display: block;
 }
 
@@ -431,4 +437,44 @@
   .step-actions {
     flex-direction: column-reverse;
   }
+}
+
+.btn-primary {
+  border: none;
+  color: white;
+  background-color: #8B6D5C;
+  padding: 10px;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  border: 2px solid #8B6D5C;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #5C4033;
+  border-color: #5C4033;
+}
+
+.btn-secondary {
+  background: white;
+  color: #8B6D5C;
+  border: 2px solid #8B6D5C;
+  padding: 10px;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #FDEAE7;
+  color: #5C4033;
+  border-color: #5C4033;
+}
+
+button:disabled, .btn-primary:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
 }
