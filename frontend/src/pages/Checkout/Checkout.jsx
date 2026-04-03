@@ -14,7 +14,7 @@ function Checkout() {
   // New Address State
   const [showAddForm, setShowAddForm] = useState(false);
   const [newAddress, setNewAddress] = useState({
-    label: "Home", street: "", city: "", state: "", zip: ""
+    name: "", phone: "", house: "", street: "", city: "", state: "", pincode: ""
   });
 
   const token = localStorage.getItem("token");
@@ -68,7 +68,7 @@ function Checkout() {
         setAddresses([data, ...addresses]);
         setSelectedAddress(data);
         setShowAddForm(false);
-        setNewAddress({ label: "Home", street: "", city: "", state: "", zip: "" });
+        setNewAddress({ name: "", phone: "", house: "", street: "", city: "", state: "", pincode: "" });
       }
     } catch (err) {
       console.error("Failed to add address");
@@ -188,9 +188,10 @@ function Checkout() {
                     className={`address-card ${selectedAddress?._id === addr._id ? "selected" : ""}`}
                     onClick={() => setSelectedAddress(addr)}
                   >
-                    <div className="addr-label">{addr.label}</div>
-                    <p>{addr.street}</p>
-                    <p>{addr.city}, {addr.state} {addr.zip}</p>
+                    <div className="addr-label">{addr.name}</div>
+                    <p>Phone: {addr.phone}</p>
+                    <p>{addr.house}, {addr.street}</p>
+                    <p>{addr.city}, {addr.state} - {addr.pincode}</p>
                   </div>
                 ))}
                 <button className="btn-secondary add-new-btn" onClick={() => setShowAddForm(true)}>
@@ -199,17 +200,41 @@ function Checkout() {
               </div>
             ) : (
               <form className="address-form" onSubmit={handleAddAddress}>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label>Full Name</label>
+                    <input 
+                      type="text" 
+                      required
+                      value={newAddress.name}
+                      onChange={e => setNewAddress({...newAddress, name: e.target.value})}
+                      placeholder="Jane Doe"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Phone Number</label>
+                    <input 
+                      type="text" 
+                      required
+                      value={newAddress.phone}
+                      onChange={e => setNewAddress({...newAddress, phone: e.target.value})}
+                      placeholder="+91 9876543210"
+                    />
+                  </div>
+                </div>
+
                 <div className="form-group">
-                  <label>Label</label>
+                  <label>Flat, House no., Building, Company, Apartment</label>
                   <input 
                     type="text" 
-                    value={newAddress.label}
-                    onChange={e => setNewAddress({...newAddress, label: e.target.value})}
-                    placeholder="Home, Work, etc."
+                    required
+                    value={newAddress.house}
+                    onChange={e => setNewAddress({...newAddress, house: e.target.value})}
                   />
                 </div>
+
                 <div className="form-group">
-                  <label>Street Address</label>
+                  <label>Area, Street, Sector, Village</label>
                   <input 
                     type="text" 
                     required
@@ -217,9 +242,10 @@ function Checkout() {
                     onChange={e => setNewAddress({...newAddress, street: e.target.value})}
                   />
                 </div>
+
                 <div className="form-row">
                   <div className="form-group">
-                    <label>City</label>
+                    <label>Town/City</label>
                     <input 
                       type="text" 
                       required
@@ -237,12 +263,12 @@ function Checkout() {
                     />
                   </div>
                   <div className="form-group">
-                    <label>ZIP Code</label>
+                    <label>PIN Code</label>
                     <input 
                       type="text" 
                       required
-                      value={newAddress.zip}
-                      onChange={e => setNewAddress({...newAddress, zip: e.target.value})}
+                      value={newAddress.pincode}
+                      onChange={e => setNewAddress({...newAddress, pincode: e.target.value})}
                     />
                   </div>
                 </div>
@@ -288,7 +314,7 @@ function Checkout() {
               <h3>Order Summary</h3>
               <div className="summary-row">
                 <span>Deliver to:</span>
-                <span>{selectedAddress?.label} - {selectedAddress?.city}</span>
+                <span>{selectedAddress?.house}, {selectedAddress?.city} - {selectedAddress?.pincode}</span>
               </div>
               <div className="summary-row">
                 <span>Total Items:</span>

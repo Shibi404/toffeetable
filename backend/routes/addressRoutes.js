@@ -18,19 +18,21 @@ router.get("/", authMiddleware, async (req, res) => {
 // Add a new address
 router.post("/", authMiddleware, async (req, res) => {
   try {
-    const { label, street, city, state, zip } = req.body;
+    const { name, phone, house, street, city, state, pincode } = req.body;
     
-    if (!street || !city || !state || !zip) {
+    if (!name || !phone || !house || !street || !city || !state || !pincode) {
       return res.status(400).json({ message: "Please provide all required fields" });
     }
 
     const newAddress = new Address({
       user: req.userId,
-      label: label || "Home",
+      name,
+      phone,
+      house,
       street,
       city,
       state,
-      zip
+      pincode
     });
 
     const savedAddress = await newAddress.save();

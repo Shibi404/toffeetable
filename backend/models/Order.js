@@ -21,11 +21,13 @@ const orderSchema = new mongoose.Schema(
       }
     ],
     address: {
+      name: String,
+      phone: String,
+      house: String,
       street: String,
       city: String,
       state: String,
-      zip: String,
-      label: String,
+      pincode: String,
     },
     totalAmount: {
       type: Number,

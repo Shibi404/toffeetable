@@ -7,10 +7,17 @@ const addressSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
-    label: {
+    name: {
       type: String,
       required: true,
-      default: "Home"
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+    house: {
+      type: String,
+      required: true,
     },
     street: {
       type: String,
@@ -24,7 +31,7 @@ const addressSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    zip: {
+    pincode: {
       type: String,
       required: true,
     }

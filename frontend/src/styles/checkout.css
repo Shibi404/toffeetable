@@ -166,13 +166,8 @@
 .addr-label {
   font-weight: 700;
   color: #5C4033;
-  margin-bottom: 10px;
-  display: inline-block;
-  background: white;
-  padding: 2px 8px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  border: 1px solid #5C4033;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
 }
 
 .address-card p {
