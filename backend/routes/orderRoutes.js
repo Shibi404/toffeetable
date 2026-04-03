@@ -33,7 +33,7 @@ router.post("/", authMiddleware, async (req, res) => {
 
     // Clear the cart for the user
     await Cart.findOneAndUpdate(
-      { user: req.userId },
+      { userId: req.userId },
       { items: [] }
     );
 
