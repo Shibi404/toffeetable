@@ -193,57 +193,97 @@
 
 /* Address Form */
 .address-form {
-  background: #fdfaf7;
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid #f0e6dd;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1.5px solid #e8dfd7;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.address-form *, 
+.address-form *::before, 
+.address-form *::after {
+  box-sizing: border-box;
 }
 
 .form-group {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .form-group label {
   display: block;
+  font-size: 11px; 
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #8B6D5C;
   margin-bottom: 8px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #5C4033;
+  margin-left: 4px;
+  letter-spacing: 0.8px;
 }
 
 .form-group input {
   width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  padding: 12px 16px;
+  border: 1.5px solid #e8dfd7;
+  border-radius: 12px;
   font-family: 'Poppins', sans-serif;
-  transition: all 0.3s ease;
+  font-size: 14px;
+  color: #3d2b1f;
+  background: #fff;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-group input:hover {
+  border-color: #d2c1b3;
 }
 
 .form-group input:focus {
-  outline: none;
-  border-color: #5C4033;
-  box-shadow: 0 0 0 3px #FDEAE7;
+  border-color: #8B6D5C;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(139, 109, 92, 0.1);
 }
 
 .form-row {
   display: flex;
-  gap: 15px;
+  gap: 15px; 
 }
 
 .form-row .form-group {
   flex: 1;
+  min-width: 0; 
 }
 
 .form-actions {
   display: flex;
-  gap: 15px;
-  margin-top: 25px;
+  gap: 12px;
+  margin-top: 10px;
 }
 
-.form-actions button {
+.form-actions .btn-primary,
+.form-actions .btn-secondary {
   flex: 1;
+  border-radius: 12px; 
+  padding: 12px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 500px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .address-form {
+    padding: 20px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
 }
 
 /* Step Actions */
