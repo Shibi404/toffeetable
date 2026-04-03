@@ -105,9 +105,9 @@ function CartDrawer() {
               <span>₹{subtotal}</span>
             </div>
             <p className="drawer-tax-note">Taxes and shipping calculated at checkout</p>
-            <button className="drawer-checkout-btn" disabled>
+            <Link to="/checkout" className="drawer-checkout-btn" onClick={() => setIsOpen(false)}>
               Checkout • ₹{subtotal}
-            </button>
+            </Link>
             <button className="drawer-continue" onClick={() => setIsOpen(false)}>
               Continue Shopping
             </button>

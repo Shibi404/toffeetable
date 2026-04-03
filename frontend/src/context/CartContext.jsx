@@ -139,6 +139,8 @@ export const CartProvider = ({ children }) => {
     return sum;
   }, 0) || 0;
 
+  const clearCartLocally = () => setCart({ items: [] });
+
   return (
     <CartContext.Provider
       value={{
@@ -149,7 +151,8 @@ export const CartProvider = ({ children }) => {
         removeItem,
         totalItems,
         subtotal,
-        fetchCart
+        fetchCart,
+        clearCartLocally
       }}
     >
       {children}
